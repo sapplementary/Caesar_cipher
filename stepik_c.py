@@ -1,14 +1,14 @@
 def caesar_shift(letter, alphabet, k, encrypt=True):
     """Сдвигает одну букву по алфавиту"""
     if letter not in alphabet:
-        return s
-    p = alphabet.index(letter)
+        return letter 
+    p = alphabet.index(letter)  
     n = len(alphabet)
     if encrypt:
         p_new = (p + k) % n
     else:
         p_new = (p - k) % n
-    return alphabet[p_new]  
+    return alphabet[p_new]
 
 def caesar(text, language, k, encrypt=True):
     """Шифрует или дешифрует текст методом Цезаря."""
@@ -25,7 +25,6 @@ def caesar(text, language, k, encrypt=True):
 
     return "".join(result)
 
-
 rus_alph_upp = 'АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
 eng_alph_upp  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 rus_alph_low = 'абвгдежзийклмнопрстуфхцчшщъыьэюя'
@@ -33,7 +32,7 @@ eng_alph_low = 'abcdefghijklmnopqrstuvwxyz'
 
 alphabets = {
     "ru": (rus_alph_upp, rus_alph_low),
-    "en": (eng_alph_low, eng_alph_upp),
+    "en": (eng_alph_upp, eng_alph_low), 
 }
 
 def main():
